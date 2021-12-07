@@ -1,0 +1,504 @@
+body {
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* devices breder dan 640px: bredere margin */
+
+@media only screen and (min-width: 640px) {
+  .maintext {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+}
+
+/* ----------------------------- */
+
+p {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.hello {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: #ddb8a6;
+  text-decoration-thickness: 2px;
+  text-align: center;
+}
+
+.maintext {
+  max-width: 45rem;
+  padding: 1rem;
+  margin-top: 50px;
+}
+
+/* visited links opmaak laten behouden */
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* ----------------------------- */
+
+/* hover effect */
+
+.hover {
+  background-image: linear-gradient(120deg, #ddb8a6b7 0%, #ddb8a6b7 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 30%;
+  background-position: 0 90%;
+  transition: background-size 0.2s ease-in;
+}
+
+.hover:hover {
+  background-size: 100% 85%;
+  cursor: pointer;
+}
+
+/* HEADER */
+
+.header {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+  float: inline-start;
+}
+
+.header li a {
+  display: block;
+  padding: 20px;
+  letter-spacing: 2px;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  color: #ddb8a6b7;
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+}
+
+/* MENU */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  display: block;
+  float: right;
+  padding: 35px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 1px;
+  position: relative;
+  transition: 0.2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu button */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* devices breder dan 640px */
+
+@media only screen and (min-width: 640px) {
+  .header li {
+    float: left;
+  }
+
+  .header li a {
+    padding: 20px 0;
+  }
+
+  .header li:nth-child(2) {
+    padding: 0 30px;
+  }
+
+  .header li:nth-child(3) {
+    padding: 0 10px 0 0;
+  }
+
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+/* ----------------------------- */
+
+/* CONTACTFORMULIER */
+
+.contact {
+  text-align: center;
+}
+
+.container {
+  background-color: white;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  position: relative;
+  overflow: hidden;
+  max-width: 90%;
+  min-height: 300px;
+  min-width: 370px;
+  margin: 20px 10px 100px 10px;
+}
+
+.bedankt {
+  text-align: center;
+}
+
+.contactpagina {
+  margin-top: 120px;
+}
+
+/* devices breder dan 640px */
+
+@media only screen and (min-width: 640px) {
+  .container {
+    margin-left: 5rem;
+    margin-right: 5rem;
+    max-width: 720px;
+    padding: 0 16px;
+  }
+}
+
+.form-container {
+  display: flex;
+}
+
+.left-container {
+  display: flex;
+  flex: 1;
+  height: 480px;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-inner-container {
+  height: 50%;
+  width: 80%;
+  text-align: center;
+  line-height: 40px;
+}
+
+.right-container {
+  display: flex;
+  flex: 1;
+  height: 480px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.right-inner-container {
+  width: 70%;
+  height: 80%;
+}
+
+input,
+textarea {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 90%;
+  font-size: 0.8rem;
+}
+
+input:focus,
+textarea:focus {
+  outline: 1px solid lightgray;
+  background-color: white;
+}
+
+/* SUBMIT BUTTON */
+
+.submit {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
+    5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  display: block;
+  margin: 20px auto;
+  background-color: #ddb8a6b7;
+}
+
+.submit:hover {
+  background-color: white;
+}
+
+.submit:active {
+  box-shadow: 0px;
+  top: 5px;
+  left: 5px;
+}
+
+/* devices smaller dan 640px; linker container niet tonen */
+
+@media only screen and (max-width: 640px) {
+  .left-container {
+    display: none;
+  }
+}
+
+/* cursor blink in contactformulier */
+
+p.cursor {
+  -webkit-animation: blink 1.5s step-end infinite;
+  animation: blink 1.5s step-end infinite;
+}
+@-webkit-keyframes blink {
+  50% {
+    visibility: hidden;
+  }
+}
+@keyframes blink {
+  50% {
+    visibility: hidden;
+  }
+}
+
+/* foutmelding na PHP validatie */
+
+.error {
+  color: #c67f43;
+  font-size: x-small;
+}
+
+/* ----------------------------- */
+
+/* LIJN BOVEN FOOTER */
+
+hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 0;
+}
+
+/* ----------------------------- */
+
+/* FOOTER */
+
+.site-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: white;
+}
+
+.toggle {
+  float: left;
+  padding: 12px 0 0 20px;
+}
+
+.social-icons {
+  float: right;
+  padding: 10px 10px 0 0;
+  color: gray;
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+
+.social-icons a:hover {
+  color: #ddb8a6b7;
+  transition: 0.2s ease-in;
+}
+
+/* ----------------------------- */
+
+/* TOGGLE */
+
+.dark-mode {
+  background-color: gray;
+  color: white;
+}
+
+.toggle--checkbox {
+  display: none;
+}
+
+/* achtergrond toggle als checked is */
+.toggle--checkbox:checked + .toggle--label {
+  background: gray;
+  border: 1px solid gray;
+}
+
+/* toggle knop als checked is */
+.toggle--checkbox:checked + .toggle--label:before {
+  background: white;
+  animation-name: switch;
+  animation-duration: 350ms;
+  animation-fill-mode: forwards;
+}
+
+.toggle--checkbox:checked + .toggle--label:after {
+  transition-delay: 350ms;
+  opacity: 1;
+}
+
+/* achtergrond toggle als niet checked is */
+.toggle--label {
+  width: 40px;
+  height: 20px;
+  background: lightgray;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  display: flex;
+  position: relative;
+  transition: all 350ms ease-in;
+}
+
+/* toggle knop als niet checked is */
+.toggle--label:before {
+  animation-name: reverse;
+  animation-duration: 350ms;
+  animation-fill-mode: forwards;
+  transition: all 350ms ease-in;
+  content: "";
+  width: 16.4px;
+  height: 16.4px;
+  border: 1px solid white;
+  top: 0.8px;
+  left: 0.8px;
+  position: absolute;
+  border-radius: 16.4px;
+  background: white;
+}
+
+.toggle--label:after {
+  transition-delay: 0ms;
+  transition: all 250ms ease-in;
+  position: absolute;
+  left: 28.6px;
+  top: 4.6px;
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+@keyframes switch {
+  0% {
+    left: 0.8px;
+  }
+  60% {
+    left: 0.8px;
+    width: 22.4px;
+  }
+  100% {
+    left: 20.8px;
+    width: 16.4px;
+  }
+}
+@keyframes reverse {
+  0% {
+    left: 20.8px;
+    width: 16.4px;
+  }
+  60% {
+    left: 14.4px;
+    width: 22.4px;
+  }
+  100% {
+    left: 0.8px;
+  }
+}
